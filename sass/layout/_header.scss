@@ -1,0 +1,312 @@
+@mixin font($fs: 14px, $fw: 400, $lh: 18px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: ($lh/$fs);
+}
+
+.header{
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ECECEC;
+  @media screen and(min-width:768px){
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.logo {
+    color: $color-logo;
+    font-family: $font-raleway;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+
+    &__accent{
+        color: $color-accent;
+    }
+}
+
+
+
+@media screen and (max-width: 767px){
+    .site-nav{
+      display: none;
+    }
+
+    .adress{
+      display: none;
+    }  
+
+    .burger-btn{
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    
+      .burger-icon{
+        height: 40px;
+        width: 40px;
+        fill: $color-logo;
+        transition: fill 250ms $cubic;
+
+          &:hover,
+          &:focus{
+            fill: $color-accent;
+          }
+        }
+    }
+
+  .mobile-menu{
+    padding: 48px 40px;
+    position: absolute;
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 50%;
+    transform: translateX(-250%);
+    transition: transform 250ms $cubic;
+    background-color: $color-white;
+    overflow-y: scroll;
+
+    &.is-open{
+      transform: translateX(-50%);
+    }
+
+      &__close-btn{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+
+        .close-icon{
+          height: 40px;
+        width: 40px;
+        fill: $color-logo;
+        transition: fill 250ms $cubic;
+
+        &:hover,
+        &:focus{
+          fill: $color-accent;
+        }
+        }
+      }
+    &__list{
+      margin: 0;
+      padding: 0;
+    }
+
+    &__items:not(:last-child){
+      margin-bottom: 32px;
+    }
+
+    &__items:last-child{
+      margin-bottom: 302px;
+    }
+
+    &__adress-list{
+      margin: 0;
+      padding: 0;
+    }
+
+    &__adress-items:not(:last-child){
+      margin-bottom: 32px;
+    }
+
+    &__adress-items:last-child{
+      margin-bottom: 64px;
+    }
+
+    &__links{
+      @include font(40px, 500, 47px);
+      font-family: $font-roboto;
+      font-style: normal;
+      letter-spacing: 0.02em;
+      color: $color-heading;
+      transition: color 250ms $cubic;
+
+        &:hover,
+        &:focus{
+          color: $color-accent;
+        }
+    }
+
+    &__adress-link-tel{
+      font-family: $font-roboto;
+      font-style: normal;
+      @include font(34px, 500, 40px);
+      letter-spacing: 0.02em;
+      color: $color-accent;
+      white-space: nowrap;
+
+    }
+
+    &__adress-link{
+      font-family: $font-roboto;
+      font-style: normal;
+      @include font(24px, 500, 28px);
+      letter-spacing: 0.02em;
+      color: $color-paragraph;
+
+      &:focus,
+      &:hover{
+        color: $color-accent;
+      }
+    }
+
+    &__sosial-list{
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+      &__sosial-list-item:not(:last-child){
+        padding-right: 10px;
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+      }
+      &__sosial-list-item:not(:first-child){
+        margin-left: 10px;
+      }
+
+      &__sosial-link{
+        font-family: $font-roboto;
+        font-style: normal;
+        @include font(18px, 500, 22px);
+        letter-spacing: 0.02em;
+        color: $color-accent;
+      }
+    }
+}
+
+@media screen and (min-width: 768px){
+
+  .burger-btn{
+    display: none;
+  }
+
+  .mobile-menu{
+    display: none;
+  }
+
+  .logo{
+    margin-right: 58px;
+  }
+  .site-nav{
+    &__list{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    }
+    &__items:not(:last-child){
+      margin-right: 50px;
+    }
+
+    &__link {
+      display: block;
+      position: relative;
+      padding-top: 32px;
+      padding-bottom: 32px;
+                
+      font-family: $font-roboto;
+      color: $color-heading;
+      @include font(14px, 500, 16px);
+      letter-spacing: 0.02em;
+              
+      transition: color 250ms $cubic;
+            
+        &:hover,
+        &:focus{
+          color: $color-accent;
+        }
+    }
+  }
+
+  .adress{
+    margin-left: auto;
+    &__list{
+      margin: 0;
+      padding: 0;
+    }
+
+    &__link {
+          display: flex; 
+          align-items: center;
+          font-family: $font-roboto;
+          color: $color-paragraph;
+          fill: $color-paragraph;
+          font-style: normal;
+          @include font(12px, 500, 14px);
+          letter-spacing: 0.02em;
+          transition: color 250ms $cubic, fill 250ms $cubic;
+
+          &:hover,
+          &:focus{
+            color: $color-accent;
+            fill: $color-accent;
+          }
+    }
+
+    &__icon{
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    &__items:not(:last-child){
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .header{
+    margin: 0 auto;
+    max-width: 1600px;  
+  }
+
+  .logo{
+    margin-right: 93px;
+  }
+
+  .adress {
+    margin-left: auto;
+    &__list {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__link {
+      display: flex; 
+      padding-top: 32px;
+      padding-bottom: 32px;
+      align-items: center;
+    }
+
+
+
+    &__items:not(:last-child){
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+}
+
+
+//   .adress__link {
+//     display: flex; 
+//     padding-top: 32px;
+//     padding-bottom: 32px;
+//     align-items: center;
+//     font-family: $font-roboto;
+//     color: $color-paragraph;
+//     font-style: normal;
+//     font-weight: 500;
+//     line-height: 1.1;
+//     letter-spacing: 0.02em;
+//     transition: color 250ms $cubic;
+//   }
+
+  

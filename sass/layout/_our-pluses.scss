@@ -1,0 +1,88 @@
+.our-pluses{
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__list{
+    margin: 0;
+    padding: 0;
+  }
+
+  &__items{
+    max-width: 450px;
+  }
+
+  &__items:not(:last-child){
+    margin-bottom: 30px;
+  }
+
+  &__text{
+    margin: 0;
+    font-family: $font-roboto;
+    font-style: normal;
+    @include font (14px, 400, 24px);
+    letter-spacing: 0.03em;
+    color:$color-paragraph;
+  }
+
+  &__heading {
+    margin: 0;
+    margin-bottom: 10px;
+    
+    font-family: $font-roboto;
+    color: $color-heading;
+    @include font (14px, 700, 16px);
+
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  &__sprite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    height: 120px;
+    background-color: $color-portfolio-button;
+    border-radius: 4px;
+  }
+
+  @media screen and (min-width: 768px){
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &__items{
+        max-width: 354px;
+        &:nth-child(2n){
+          margin-left: 30px;
+        }
+      }
+    
+  }
+
+  @media screen and (min-width: 1200px){
+    &{
+      padding-top: 94px;
+      padding-bottom: 94px;
+    }
+
+    &__list{
+      flex-wrap: nowrap;
+    }
+    &__items {
+      width: 270px;
+      &:nth-child(2n){
+        margin-left: 0;
+      }
+    }
+   
+    &__items:not(:last-child){
+      margin-right: 30px;
+      }
+    
+    
+  }
+
+}

@@ -1,0 +1,59 @@
+.clients{
+    padding-top: 96px;
+    padding-bottom: 92px;
+
+  .container{
+        display: block;
+        align-items: center;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+  &__heading{
+        margin: 0;
+        padding: 0;
+        margin-bottom: 50px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.16;
+        text-align: center;
+        letter-spacing: 0.03em;
+
+        color: $color-heading;
+    }
+  
+
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 90px;
+    color: $color-sosial-link;
+    border: 1px solid $color-sosial-link;
+    border-radius: 4px;
+    fill: $color-sosial-link;
+
+    transition: border 250ms $cubic, color 250ms $cubic, fill 250ms $cubic;
+
+      &:hover,
+      &:focus{
+          color: $color-accent;
+          border: 1px solid $color-accent;
+          fill: $color-accent;
+      }
+  }
+
+}
