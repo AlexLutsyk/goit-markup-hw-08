@@ -7,19 +7,21 @@
     background-color: rgba(0, 0, 0, 0.2);
 
     transition: all 259ms $cubic;
-  
-  .modal{
+
+    .modal{
     position: absolute;
     top: 50%;
     left: 50%;
     padding: 40px;
     transform: translate(-50%, -50%);
-    width: 528px;
-    height: 581px;
+    width: 100%;
+    max-width: 450px;
+    height: 95%;
+    max-height: 609px;
     background: $color-white;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-  
+    overflow: scroll;
 
     &__close-btn{
       position: absolute;
@@ -48,166 +50,185 @@
       }
     }
 
-    &__form{
+  &__form{
       display: flex;
       flex-direction: column;
 
-      &-heading{
-          margin: 0;
-          margin-bottom: 12px;
-          font-family: $font-roboto;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 20px;
-          line-height: 1.15;
-          text-align: center;
-          letter-spacing: 0.03em;
-          color: $color-heading;
-        }
+    &-heading{
+      margin: 0;
+      margin-bottom: 12px;
+      font-family: $font-roboto;
+      font-style: normal;
+      @include font (20px, 700, 30px);
+      text-align: center;
+      letter-spacing: 0.03em;
+      color: $color-heading;
+      }
 
       &-label{
         margin-bottom: 4px;
         font-family: $font-roboto;
         font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.166;
+        @include font (12px, 400, 14px);
         letter-spacing: 0.01em;
         color: $color-paragraph;
+
       }
 
-    &-user-svg{
-      position: relative;
-      margin-bottom: 10px;
-    }
+      &-user-svg{
+        position: relative;
+        margin-bottom: 10px;
+      }
+  
+      &-icon{
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+      }
 
-    &-icon{
-      position: absolute;
-      top: 50%;
-      left: 12px;
-      transform: translateY(-50%);
-    }
+      &-input{
+        display: block;
+        padding: 11px 42px;
+        width: 100%;
+        max-width: 370px;
+        height: 40px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        
+        border-radius: 4px;
+        transition: border-color 250ms $cubic, fill 250ms $cubic;
 
-    &-input{
-      display: block;
-      
-      padding: 11px 42px;
-      width: 100%;
-      height: 40px;
-      border: 1px solid rgba(33, 33, 33, 0.2);
-      
-      border-radius: 4px;
-      transition: border-color 250ms $cubic, fill 250ms $cubic;
+        &:focus{
+            outline: none;
+            border-color: $color-accent;
+          }
 
-      &:focus{
-          outline: none;
-          border-color: $color-accent;
+        &:focus + .modal__form-icon{
+            fill: $color-accent;
         }
-
-      &:focus + .form-icon{
-          fill: $color-accent;
-        }
-      
-    }
+      }
 
       &-textarea{
-          display: block;
-          padding: 12px 16px;
-          margin-bottom: 20px;
-          width: 100%;
-          height: 120px;
-          border: 1px solid rgba(33, 33, 33, 0.2);
-          border-radius: 4px;
-          resize: none;
+      display: block;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 370px;
+      height: 120px;
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      border-radius: 4px;
+      resize: none;
           
-          transition: border-color 250ms $cubic;
+      transition: border-color 250ms $cubic;
 
-          &::placeholder{
-              font-family: $font-roboto;
-              font-style: normal;
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 1.142;
-              letter-spacing: 0.01em;
+      &:focus{
+        outline: none;
+        border-color:$color-accent;
+      }
+
+      &::placeholder{
+          font-family: $font-roboto;
+          font-style: normal;
+          @include font (14px, 400, 16px);
+          letter-spacing: 0.01em;
           
-              color: rgba(117, 117, 117, 0.5);
-          }
-
-          &:focus{
-              outline: none;
-              border-color:$color-accent;
-          }
+          color: rgba(117, 117, 117, 0.5);
+        }
       }
 
       &-checkbox{
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
-        }
-      
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
       &-checkbox-label{
           display: flex;
           align-items: center;
-
-          &::before{
-              display: flex;
-              flex-wrap: wrap;
-              margin-right: 8px;
-              content: " ";
-              width: 16px;
-              height: 15px;
-              border: 1px solid $color-heading;
-              border-radius: 4px;
-          }
-        }
-
-      &-checkbox:checked + .modal__form-checkbox-label::before{
-          border-color: $color-accent;
-          background-color: $color-accent;
-          background-image: url(../images/sprites/icon-checkk.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-          background-origin: border-box;
-        }
-
-        &-user-link{
-          margin-left: 3px;
-          font-family: $font-roboto;
+          font-family: Roboto;
           font-style: normal;
           font-weight: 400;
-          font-size: 14px;
-          line-height: 1.714;
-          
+          font-size: 89%;
+          line-height: 1.166;
           letter-spacing: 0.03em;
-          text-decoration-line: underline;
-          color: $color-accent;
-        }
-        
-        &-button--submit{
-          padding: 10px 55px;
-          margin: 0 auto;
-          width: 200px;
-          font-family: $font-roboto;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 1.875;
-          letter-spacing: 0.06em;
-          background-color: $color-accent;
-          color: $color-white;
-          
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          border-radius: 4px;
-          outline: none;
-          border-color: transparent;
-          transition: background-color 250ms $cubic;
 
+          color: #757575;
+        
+          &::before{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: 8px;
+            content: " ";
+            width: 16px;
+            height: 15px;
+            border: 1px solid $color-heading;
+            border-radius: 4px;
+          }
+      }
+        
+      &-checkbox:checked + .modal__form-checkbox-label::before{
+        border-color: $color-accent;
+        background-color: $color-accent;
+        background-image: url(../images/sprites/icon-checkk.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-origin: border-box;
+      }
+
+      &-user-link{
+        margin-left: 3px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 90%;
+        line-height: 1.714;
+                  
+        letter-spacing: 0.03em;
+        text-decoration-line: underline;
+        color: $color-accent;
+      }
+
+      &-button--submit{
+        padding: 10px 55px;
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 200px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.875;
+        letter-spacing: 0.06em;
+        background-color: $color-accent;
+        color: $color-white;
+                  
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        outline: none;
+        border-color: transparent;
+        transition: background-color 250ms $cubic;
+        
           &:focus,
           &:hover{
               background-color: $color-accent-button-form;
           }
-        }
       }
     }
-}
+
+    
+  }
+
+  @media screen and (min-width: 1200px){
+    .modal{
+      width: 528px;
+      height: 581px;
+      overflow: visible;
+
+      &__form-heading{
+        @include font (16px, 700, 23px);
+      
+      }
+    }
+  }
+}  

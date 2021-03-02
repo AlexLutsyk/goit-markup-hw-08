@@ -1,59 +1,128 @@
 .clients{
-    padding-top: 96px;
-    padding-bottom: 92px;
-
-  .container{
-        display: block;
-        align-items: center;
-        width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 15px;
-        padding-left: 15px;
-      }
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   &__heading{
-        margin: 0;
-        padding: 0;
-        margin-bottom: 50px;
-        font-family: $font-roboto;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 1.16;
-        text-align: center;
-        letter-spacing: 0.03em;
-
-        color: $color-heading;
-    }
-  
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    font-family: $font-roboto;
+    font-style: normal;
+    @include font (28px, 700, 33px);
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $color-heading;
+  }
 
   &__list{
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    margin: 0;
     padding: 0;
+  }
+
+  &__items{
+    width: calc((100% - 4 * 15px)/ 2);
+    margin: 0 15px;
+    margin-bottom: 30px;
+    &:nth-last-child(-n + 2){
+      margin-bottom: 0;
+    }
   }
 
   &__link{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 170px;
+    max-width: 210px;
     height: 90px;
     color: $color-sosial-link;
     border: 1px solid $color-sosial-link;
     border-radius: 4px;
     fill: $color-sosial-link;
-
+    
     transition: border 250ms $cubic, color 250ms $cubic, fill 250ms $cubic;
 
+    
+    
       &:hover,
       &:focus{
-          color: $color-accent;
-          border: 1px solid $color-accent;
-          fill: $color-accent;
+        color: $color-accent;
+        border: 1px solid $color-accent;
+        fill: $color-accent;
+        }
+  }
+
+  @media screen and (min-width: 768px){
+      &__items{
+        width: calc((100% - 6 * 15px)/ 3);
+        margin:0 15px;
+        margin-bottom: 30px;
+        &:nth-last-child(-n + 3){
+          margin-bottom: 0;
+        }
+      }
+      &__link{
+        max-width: 226px;
       }
   }
 
+  @media screen and (min-width: 1200px){
+
+    padding-top: 96px;
+    padding-bottom: 92px;
+
+    &__heading{
+      margin-bottom: 50px;
+    }
+    &__list{
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0;
+    }
+    &__link{
+      max-width: 170px;
+    }
+  
+  }
+    
 }
+
+// .clients{
+//     
+
+//   .container{
+//         display: block;
+//         align-items: center;
+//         width: 1200px;
+//         margin-left: auto;
+//         margin-right: auto;
+//         padding-right: 15px;
+//         padding-left: 15px;
+//       }
+
+//   &__heading{
+//         
+//         margin-bottom: 50px;
+//         
+//         
+//         
+
+//     }
+  
+
+//   &__list{
+//     justify-content: space-between;
+//     margin: 0 auto;
+//     padding: 0;
+//   }
+
+//   &__link{
+//     
+//     width: 170px;
+//     height: 90px;
+//    
+//   }
+
+// }
