@@ -104,13 +104,14 @@
       margin-bottom: 32px;
     }
 
-    &__items:last-child{
-      margin-bottom: 302px;
-    }
+    // &__items:last-child{
+    //   margin-bottom: 302px;
+    // }
 
     &__adress-list{
       margin: 0;
       padding: 0;
+      margin-top: 75px;
     }
 
     &__adress-items:not(:last-child){

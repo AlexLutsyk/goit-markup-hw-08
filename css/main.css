@@ -195,12 +195,10 @@ a {
   .mobile-menu__items:not(:last-child) {
     margin-bottom: 32px;
   }
-  .mobile-menu__items:last-child {
-    margin-bottom: 302px;
-  }
   .mobile-menu__adress-list {
     margin: 0;
     padding: 0;
+    margin-top: 75px;
   }
   .mobile-menu__adress-items:not(:last-child) {
     margin-bottom: 32px;
@@ -543,6 +541,9 @@ a {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  .our-pluses__heading {
+    text-align: start;
+  }
   .our-pluses__items {
     width: calc((100% - 4 * 15px)/ 2);
     margin-left: 15px;
@@ -757,6 +758,14 @@ a {
 }
 
 @media screen and (min-width: 1200px) {
+  .our-team {
+    padding: 94px 0;
+  }
+  .our-team__heading {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.116;
+  }
   .our-team__items {
     width: calc((100% - 8 * 15px)/ 4);
     margin: 0 15px;
@@ -851,6 +860,9 @@ a {
     padding-bottom: 92px;
   }
   .clients__heading {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.116;
     margin-bottom: 50px;
   }
   .clients__list {

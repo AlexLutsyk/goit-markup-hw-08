@@ -53,6 +53,10 @@
         flex-wrap: wrap;
       }
 
+      &__heading{
+        text-align: start;
+      }
+
       &__items{
         width: calc((100% - 4 * 15px)/ 2);
         margin-left: 15px;

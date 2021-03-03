@@ -106,6 +106,13 @@
 
 @media screen and (min-width: 1200px){
   .our-team{
+
+    &__heading{
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1.116;
+    }
+    padding: 94px 0;
     &__items{
       width: calc((100% - 8 * 15px)/ 4);
       margin: 0 15px;
